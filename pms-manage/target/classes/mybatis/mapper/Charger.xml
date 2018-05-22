@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.dao.IChargerDao">
+    <resultMap id="resultMap" type="com.ssm.bean.Charger">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="cardtype" property="cardtype" jdbcType="VARCHAR"/>
+        <result column="stationtype" property="stationtype" jdbcType="VARCHAR"/>
+        <result column="charge" property="charge" jdbcType="INTEGER"/>
+    </resultMap>
+    <select id="queryAll" parameterType="java.util.Map" resultMap="resultMap">
+        SELECT
+          *
+        FROM
+          `charger`
+    </select>
+</mapper>

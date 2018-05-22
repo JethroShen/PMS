@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+	
+	<!-- <plugins>
+		配置分页助手的插件
+		<plugin interceptor="com.github.pagehelper.PageHelper">
+			指定数据库方言
+			<property name="dialect" value="mysql"/>
+			设置为true时，查询结果中会查询出总条数信息
+			<property name="rowBoundsWithCount" value="true"/>
+		</plugin>
+		通用Mapper的插件
+		<plugin interceptor="com.github.abel533.mapperhelper.MapperInterceptor">
+			主键自增回写方法,默认值MYSQL
+			<property name="IDENTITY" value="MYSQL" />
+			通用Mapper默认接口，我们定义的Mapper需要实现该接口
+			<property name="mappers" value="com.github.abel533.mapper.Mapper" />
+		</plugin>
+	</plugins> -->
+	
+</configuration>

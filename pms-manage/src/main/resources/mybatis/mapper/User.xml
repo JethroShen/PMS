@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.dao.IUserDao">
+    <resultMap id="userResultMap" type="com.ssm.bean.User">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="carId" property="carId" jdbcType="VARCHAR"/>
+        <result column="money" property="money" jdbcType="INTEGER"/>
+        <result column="tel" property="tel" jdbcType="VARCHAR"/>
+        <result column="usertype" property="usertype" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="getUser" parameterType="java.util.Map" resultMap="userResultMap">
+        SELECT
+          *
+        FROM
+          `user`
+        WHERE
+        `tel` = #{tel} AND `password` = #{password};
+    </select>
+    <select id="queryUserByCarId" parameterType="java.util.Map" resultMap="userResultMap">
+        SELECT
+          *
+        FROM
+          `user`
+        WHERE
+        `carId` LIKE CONCAT('%',#{carId},'%');
+    </select>
+    <select id="findAll" parameterType="java.util.Map" resultMap="userResultMap">
+        SELECT
+          *
+        FROM
+          `user`
+    </select>
+</mapper>
